@@ -15,7 +15,7 @@ export function init () {
 	let excuteConfig = defaultConfig
 	const configPath = path.join(basePath, './swagger-api-config.json')
 	jsonfile.readFile(configPath, function(err, config) {
-	  console.log(err, config, 'errerrerr')
+	  console.log(err, config, 'jsonfilereadFile')
 		if (err) {
 			console.log(chalk.blue('cannot find swagger-api-config.json, please define this file\n'))
 			return;

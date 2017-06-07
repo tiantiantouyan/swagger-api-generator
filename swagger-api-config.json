@@ -1,6 +1,6 @@
 {
 	"inputMode": "json",
 	"outputMode": "default",
-	"inputPath": "./swaggerApi.json",
+	"inputPath": "./swagger.json",
 	"outputPath": "./src/api"
 }
