@@ -1,0 +1,6 @@
+{
+	"inputMode": "json",
+	"outputMode": "default", //  "default", "simple", "FFModel"
+	"inputPath": "./swaggerApi.json", // relative path
+	"outputPath": "./src/api"
+}
