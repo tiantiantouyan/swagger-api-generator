@@ -1,6 +1,6 @@
 {
   "name": "swagger-api-generator",
-  "version": "1.0.11",
+  "version": "1.0.10",
   "description": "generate api function by swagger",
   "main": "lib/index",
   "engine": {
@@ -46,9 +46,9 @@
     "shelljs": "^0.7.7"
   },
   "bin": {
-    "SAG": "bin/SAG.js",
-    "SAG-Json": "bin/SAG-Json.js",
-    "SAG-Url": "bin/SAG-Url.js"
+    "SAG": "bin/sag.js",
+    "SAG-init": "bin/sag-init.js",
+    "SAG-generate": "bin/sag-generate.js"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0"
