@@ -48,7 +48,7 @@ export function init () {
 				const configListOutput = generateConfigList(configList)
 				const ApiListOutput = generateApiList(configList)
 				generateFile(configListOutput, outputPath, 'api-config-list.js')
-				// generateFile(ApiListOutput, outputPath, 'index.js')
+				generateFile(ApiListOutput, outputPath, 'index.js')
 				break;
 			}
 			case 'apiOnly': {

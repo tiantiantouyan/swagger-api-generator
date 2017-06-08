@@ -15,8 +15,8 @@ const fileHeadInfo =
   `// http://localhost:1000/editme\n` + // 这里编辑后台对应的路由
   `// 查看configList表格，进行查看你未配置FFmodel的api等操作\n`
 
-	export function getConfigListTemplate (configList) {
+	export function getConfigListTemplate (str) {
 		return `${fileHeadInfo}\n` +
-      `const configList = [\n${configList}]\n\n` +
+      `const configList = [\n${str}]\n\n` +
       `module.exports = configList\n`
 	}
