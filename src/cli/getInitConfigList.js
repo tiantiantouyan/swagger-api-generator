@@ -56,7 +56,7 @@ function getByUrl (inputPath, outputPath, outputMode) {
 			const configListPath = path.join(outputPath, 'api-config-list.js')
 			let apiConfigList = fs.existsSync(configListPath) ? require(configListPath) : []
 			if (!apiConfigList.length) apiConfigList = []
-			if (body && body.paths) {
+			if (body) { // 不一定正确 Body有时候是错误字符串
 				const swaggerObj = JSON.parse(body)
 				return resolve(getConfigList(apiConfigList, swaggerObj, outputMode))
 			} else {
