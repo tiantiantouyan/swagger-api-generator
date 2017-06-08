@@ -2,7 +2,7 @@
   "name": "swagger-api-generator",
   "version": "1.0.6",
   "description": "generate api function by swagger",
-  "main": "bin/SAG.js",
+  "main": "lib/index",
   "engine": {
     "node": ">=5.1"
   },
@@ -12,8 +12,8 @@
     "build": "npm run clean && babel src -d lib",
     "build:watch": "babel src --watch -d lib",
     "clean": "rimraf lib",
-    "publish:patch": "npm run clean && npm run build && npm version patch && npm publish",
-    "publish:minor": "npm run clean && npm run build && npm version minor && npm publish"
+    "publish:patch": "npm version patch && npm publish",
+    "publish:minor": "npm version minor && npm publish"
   },
   "keywords": [
     "swagger",
