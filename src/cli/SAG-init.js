@@ -6,11 +6,6 @@ const program = commander;
 program
   .version(version());
 
-program
-  .command('init', 'initialize a swagger-api-config.json file');
-
-program
-  .command('generate', 'generates files')
-  .command('g', 'alias for generate');
+console.log('asdsadsadsadsadsadsadasd');
 
 program.parse(process.argv);
