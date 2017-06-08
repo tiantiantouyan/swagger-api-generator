@@ -12,8 +12,8 @@
     "build": "npm run clean && babel src -d lib",
     "build:watch": "babel src --watch -d lib",
     "clean": "rimraf lib",
-    "publish:patch": "npm run build && npm version patch && npm publish",
-    "publish:minor": "npm run build && npm version minor && npm publish"
+    "publish:patch": "npm version patch && npm publish",
+    "publish:minor": "npm version minor && npm publish"
   },
   "keywords": [
     "swagger",
