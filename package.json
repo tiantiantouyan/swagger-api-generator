@@ -2,7 +2,7 @@
   "name": "swagger-api-generator",
   "version": "1.0.5",
   "description": "generate api function by swagger",
-  "main": "lib/index.js",
+  "main": "bin/SAG.js",
   "engine": {
     "node": ">=5.1"
   },
