@@ -33,8 +33,7 @@ const configList = [
 		tags: [
 			"users"
 		],
-		FFModelCombine: "Users",
-		FFModel: "GetUserProfile"
+		name: "GetUserProfile"
 	},
 	{
 		description: "-------send sms code----------",
@@ -59,8 +58,7 @@ const configList = [
 		tags: [
 			"auth"
 		],
-		FFModelCombine: "Auth",
-		FFModel: "PostV1AuthSmsCode"
+		name: "PostV1AuthSmsCode"
 	},
 	{
 		description: "--------login with phone number--------",
@@ -81,8 +79,7 @@ const configList = [
 		tags: [
 			"auth"
 		],
-		FFModelCombine: "Auth",
-		FFModel: "PostV1AuthLoginPhone"
+		name: "PostV1AuthLoginPhone"
 	},
 	{
 		description: "-------find back password---------",
@@ -107,8 +104,7 @@ const configList = [
 		tags: [
 			"auth"
 		],
-		FFModelCombine: "Auth",
-		FFModel: "PatchV1AuthResetPassword"
+		name: "PatchV1AuthResetPassword"
 	},
 	{
 		description: "------鑾峰彇绛涢€夐」淇℃伅-------",
@@ -125,8 +121,7 @@ const configList = [
 		tags: [
 			"filter"
 		],
-		FFModelCombine: "Filter",
-		FFModel: "GetV1FilterItems"
+		name: "GetV1FilterItems"
 	},
 	{
 		description: "------鑾峰彇鍐呭鍒嗘瀽鏁版嵁-------",
@@ -171,8 +166,7 @@ const configList = [
 		tags: [
 			"articles"
 		],
-		FFModelCombine: "Articles",
-		FFModel: "GetV1Articles"
+		name: "GetV1Articles"
 	},
 	{
 		description: "------鑾峰彇鍐呭闃呰鎯呭喌-------",
@@ -195,8 +189,7 @@ const configList = [
 		tags: [
 			"articles"
 		],
-		FFModelCombine: "Articles",
-		FFModel: "GetArticle"
+		name: "GetArticle"
 	},
 	{
 		description: "get article by id",
@@ -213,8 +206,7 @@ const configList = [
 		tags: [
 			"contents"
 		],
-		FFModelCombine: "Contents",
-		FFModel: "GetId"
+		name: "GetId"
 	},
 	{
 		description: "create article",
@@ -251,8 +243,7 @@ const configList = [
 		tags: [
 			"protected"
 		],
-		FFModelCombine: "Protected",
-		FFModel: "PostV1ProtectedContents"
+		name: "PostV1ProtectedContents"
 	},
 	{
 		description: "------鑾峰彇瀹㈡埛淇℃伅鍒楄〃-------",
@@ -301,8 +292,7 @@ const configList = [
 		tags: [
 			"customers"
 		],
-		FFModelCombine: "Customers",
-		FFModel: "GetV1Customers"
+		name: "GetV1Customers"
 	},
 	{
 		description: "------鑾峰彇鍗曚竴瀹㈡埛淇℃伅-------",
@@ -319,8 +309,7 @@ const configList = [
 		tags: [
 			"customers"
 		],
-		FFModelCombine: "Customers",
-		FFModel: "GetCustomer"
+		name: "GetCustomer"
 	},
 	{
 		description: "------瀵规垜鐨勫叧娉ㄦ儏鍐�-------",
@@ -343,8 +332,7 @@ const configList = [
 		tags: [
 			"customers"
 		],
-		FFModelCombine: "Customers",
-		FFModel: "GetCustomerAttention"
+		name: "GetCustomerAttention"
 	},
 	{
 		description: "------闃呰鏄庣粏-------",
@@ -371,8 +359,7 @@ const configList = [
 		tags: [
 			"customers"
 		],
-		FFModelCombine: "Customers",
-		FFModel: "GetCustomerRead"
+		name: "GetCustomerRead"
 	},
 	{
 		description: "------鏈烘瀯涓殑瀹㈡埛淇℃伅-------",
@@ -389,8 +376,7 @@ const configList = [
 		tags: [
 			"organizations"
 		],
-		FFModelCombine: "Organizations",
-		FFModel: "GetOrganization"
+		name: "GetOrganization"
 	},
 	{
 		description: "------鏈烘瀯鎵€鏈夊鎴峰鎴戠殑鍏虫敞鎯呭喌-------",
@@ -413,8 +399,7 @@ const configList = [
 		tags: [
 			"organizations"
 		],
-		FFModelCombine: "Organizations",
-		FFModel: "GetOrganizationAttention"
+		name: "GetOrganizationAttention"
 	},
 	{
 		description: "------闃呰鏄庣粏-------",
@@ -441,8 +426,7 @@ const configList = [
 		tags: [
 			"organizations"
 		],
-		FFModelCombine: "Organizations",
-		FFModel: "GetOrganizationRead"
+		name: "GetOrganizationRead"
 	},
 	{
 		description: "------鑾峰彇鏈烘瀯鍜屽鎴风殑鎻愮ず-------",
@@ -459,8 +443,7 @@ const configList = [
 		tags: [
 			"search_tips"
 		],
-		FFModelCombine: "Search_tips",
-		FFModel: "GetV1Search"
+		name: "GetV1Search"
 	},
 	{
 		description: "create read logs",
@@ -485,8 +468,7 @@ const configList = [
 		tags: [
 			"journal"
 		],
-		FFModelCombine: "Journal",
-		FFModel: "PostV1JournalReads"
+		name: "PostV1JournalReads"
 	},
 	{
 		description: "create share logs",
@@ -507,8 +489,7 @@ const configList = [
 		tags: [
 			"journal"
 		],
-		FFModelCombine: "Journal",
-		FFModel: "PostV1JournalShares"
+		name: "PostV1JournalShares"
 	}
 ]
 

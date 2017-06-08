@@ -1,6 +1,7 @@
 import path from 'path'
 import chalk from 'chalk';
 import jsonfile from 'jsonfile'
+import { getInitConfigList } from './getInitConfigList'
 import {
 	basePath,
 	defaultConfig
@@ -10,6 +11,7 @@ import {
 	generateApiList,
 	generateFFModel
 } from '../models';
+import { generateFile } from '../util/generate-file'
 
 export function init () {
 	let excuteConfig = defaultConfig
@@ -32,28 +34,37 @@ export function init () {
 		}
 		excuteConfig.inputPath = path.join(basePath, excuteConfig.inputPath)
 		excuteConfig.outputPath = path.join(basePath, excuteConfig.outputPath)
-		console.log(excuteConfig, 'excuteConfigexcuteConfig');
 
-		switch (excuteConfig.outputMode) {
+		const configList = getInitConfigList(excuteConfig)
+
+		console.log('configListconfigList', configList);
+		const {
+			outputPath,
+			outputMode
+		} = excuteConfig
+		switch (outputMode) {
 			case 'default':
 			default: {
-				generateConfigList(excuteConfig)
-				generateApiList(excuteConfig)
+				const configListOutput = generateConfigList(configList)
+				const ApiListOutput = generateApiList(configList)
+				generateFile(configListOutput, outputPath, 'api-config-list.js')
+				// generateFile(ApiListOutput, outputPath, 'index.js')
 				break;
 			}
 			case 'apiOnly': {
-				generateApiList(excuteConfig)
+				const ApiListOutput = generateApiList(configList)
+				generateFile(ApiListOutput, outputPath, 'index.js')
 				break;
 			}
 			case 'all': {
-				generateConfigList(excuteConfig)
-				generateApiList(excuteConfig)
-				generateFFModel(excuteConfig)
+				const configListOutput = generateConfigList(configList)
+				const ApiListOutput = generateApiList(configList)
+				const FFModelOutput = generateFFModel(configList)
+				generateFile(configListOutput, outputPath, 'api-config-list.js')
+				generateFile(ApiListOutput, outputPath, 'index.js')
+				// generateFFModelFolder(ApiListOutput, outputPath)
 				break;
 			}
 		}
-
-		// generateFile('sss',  basePath, 'output.js')
 	})
-
 }
