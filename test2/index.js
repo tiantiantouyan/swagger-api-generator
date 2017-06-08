@@ -1,5 +1,4 @@
-
-/* ┌────────────────────────────────────────────────────────────────────────────┐  */ 
+/* ┌────────────────────────────────────────────────────────────────────────────┐  */
 
 // apiRequest是一个封装了axios请求的函数
 // https://github.com/mzabriskie/axios
@@ -9,13 +8,13 @@
 
 /*  └────────────────────────────────────────────────────────────────────────────┘ */
 
-// 本文件更新时间：08-06-2017 19:24
+// 本文件更新时间：08-06-2017 22:31
 
 // import { easySignature } from './signature' // 手动使用
 import api from './client'
 import { forEach } from './utils'
 
-------get----profile-------
+// ------get----profile-------
 export function GetUserProfile (payload) {
 	const { user_id } = payload
 	const config = {
@@ -25,7 +24,7 @@ export function GetUserProfile (payload) {
 	return api.Request(config)
 }
 
--------send sms code----------
+// -------send sms code----------
 export function PostV1AuthSmsCode (payload) {
 	const config = {
 		method: 'post',
@@ -42,7 +41,7 @@ export function PostV1AuthSmsCode (payload) {
 	return api.Request(config)
 }
 
---------login with phone number--------
+// --------login with phone number--------
 export function PostV1AuthLoginPhone (payload) {
 	const config = {
 		method: 'post',
@@ -59,7 +58,7 @@ export function PostV1AuthLoginPhone (payload) {
 	return api.Request(config)
 }
 
--------find back password---------
+// -------find back password---------
 export function PatchV1AuthResetPassword (payload) {
 	const config = {
 		method: 'patch',
@@ -76,7 +75,7 @@ export function PatchV1AuthResetPassword (payload) {
 	return api.Request(config)
 }
 
-------获取筛选项信息-------
+// ------鑾峰彇绛涢€夐」淇℃伅-------
 export function GetV1FilterItems (payload) {
 	const config = {
 		method: 'get',
@@ -93,7 +92,7 @@ export function GetV1FilterItems (payload) {
 	return api.Request(config)
 }
 
-------获取内容分析数据-------
+// ------鑾峰彇鍐呭鍒嗘瀽鏁版嵁-------
 export function GetV1Articles (payload) {
 	const config = {
 		method: 'get',
@@ -110,7 +109,7 @@ export function GetV1Articles (payload) {
 	return api.Request(config)
 }
 
-------获取内容阅读情况-------
+// ------鑾峰彇鍐呭闃呰鎯呭喌-------
 export function GetArticle (payload) {
 	const { article_id } = payload
 	const config = {
@@ -128,7 +127,7 @@ export function GetArticle (payload) {
 	return api.Request(config)
 }
 
-get article by id
+// get article by id
 export function GetId (payload) {
 	const { id } = payload
 	const config = {
@@ -138,7 +137,7 @@ export function GetId (payload) {
 	return api.Request(config)
 }
 
-create article
+// create article
 export function PostV1ProtectedContents (payload) {
 	const config = {
 		method: 'post',
@@ -155,7 +154,7 @@ export function PostV1ProtectedContents (payload) {
 	return api.Request(config)
 }
 
-------获取客户信息列表-------
+// ------鑾峰彇瀹㈡埛淇℃伅鍒楄〃-------
 export function GetV1Customers (payload) {
 	const config = {
 		method: 'get',
@@ -172,7 +171,7 @@ export function GetV1Customers (payload) {
 	return api.Request(config)
 }
 
-------获取单一客户信息-------
+// ------鑾峰彇鍗曚竴瀹㈡埛淇℃伅-------
 export function GetCustomer (payload) {
 	const { customer_id } = payload
 	const config = {
@@ -182,7 +181,7 @@ export function GetCustomer (payload) {
 	return api.Request(config)
 }
 
-------对我的关注情况-------
+// ------瀵规垜鐨勫叧娉ㄦ儏鍐�-------
 export function GetCustomerAttention (payload) {
 	const { customer_id } = payload
 	const config = {
@@ -200,7 +199,7 @@ export function GetCustomerAttention (payload) {
 	return api.Request(config)
 }
 
-------阅读明细-------
+// ------闃呰鏄庣粏-------
 export function GetCustomerRead (payload) {
 	const { customer_id } = payload
 	const config = {
@@ -218,7 +217,7 @@ export function GetCustomerRead (payload) {
 	return api.Request(config)
 }
 
-------机构中的客户信息-------
+// ------鏈烘瀯涓殑瀹㈡埛淇℃伅-------
 export function GetOrganization (payload) {
 	const { organization_id } = payload
 	const config = {
@@ -228,7 +227,7 @@ export function GetOrganization (payload) {
 	return api.Request(config)
 }
 
-------机构所有客户对我的关注情况-------
+// ------鏈烘瀯鎵€鏈夊鎴峰鎴戠殑鍏虫敞鎯呭喌-------
 export function GetOrganizationAttention (payload) {
 	const { organization_id } = payload
 	const config = {
@@ -246,7 +245,7 @@ export function GetOrganizationAttention (payload) {
 	return api.Request(config)
 }
 
-------阅读明细-------
+// ------闃呰鏄庣粏-------
 export function GetOrganizationRead (payload) {
 	const { organization_id } = payload
 	const config = {
@@ -264,7 +263,7 @@ export function GetOrganizationRead (payload) {
 	return api.Request(config)
 }
 
-------获取机构和客户的提示-------
+// ------鑾峰彇鏈烘瀯鍜屽鎴风殑鎻愮ず-------
 export function GetV1Search (payload) {
 	const config = {
 		method: 'get',
@@ -281,14 +280,14 @@ export function GetV1Search (payload) {
 	return api.Request(config)
 }
 
-create read logs
+// create read logs
 export function PostV1JournalReads (payload) {
 	const config = {
 		method: 'post',
 		url: `/v1/journal/reads`,
 	}
 	const data = {}
-	const dataKeyList = ['article_id', 'reader_id', 'author_id', 'openid']
+	const dataKeyList = ['article_id', 'reader_id', 'author_id']
 	forEach(dataKeyList, key => {
 		if (payload[key]) {
 			data[key] = payload[key]
@@ -298,14 +297,14 @@ export function PostV1JournalReads (payload) {
 	return api.Request(config)
 }
 
-create share logs
+// create share logs
 export function PostV1JournalShares (payload) {
 	const config = {
 		method: 'post',
 		url: `/v1/journal/shares`,
 	}
 	const data = {}
-	const dataKeyList = ['article_id', 'user_id', 'openid']
+	const dataKeyList = ['article_id', 'user_id']
 	forEach(dataKeyList, key => {
 		if (payload[key]) {
 			data[key] = payload[key]

@@ -29,6 +29,7 @@ export function init (excuteConfig) {
 		config.inputPath = path.join(basePath, config.inputPath)
 	}
 	config.outputPath = path.join(basePath, config.outputPath)
+	console.log(config.outputPath, 'outputPathoutputPathoutputPathoutputPath');
 	excuteOutput(excuteConfig)
 }
 
@@ -75,7 +76,7 @@ function excuteOutput (excuteConfig) {
 			generateOutput (configList, outputPath, outputMode)
 		})
 		.catch(function (err) {
-			console.log(chalk.bgRed('输入源有误'));
+			console.log(chalk.bgRed('输入源有误', err));
 		})
 }
 

@@ -6,11 +6,11 @@
 // }
 
 // 使用时将FFModel文件夹名称放入到页面的model下
-// 本文件更新时间：08-06-2017 17:02
+// 本文件更新时间：08-06-2017 22:18
 
 const FFModelCombine = [
 	{
-		key: "GetV1FilterItems",
+		key: "PostV1ProtectedContents",
 		initialProps: {
 			data: [
 			]

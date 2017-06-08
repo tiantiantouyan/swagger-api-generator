@@ -16,7 +16,6 @@ export function generateFFModelFolder(configList, outputPath) {
 				const _combinePath = path.join(FFModelPath, `/${data.FFModelCombine}`)
 				mkdirp(_combinePath, function () {
 					const fileStr = getTemplate(generaFFModelFileStr(getTemplateFFModel(data.data)))
-					console.log(fileStr, _combinePath, 'fileStrfileStr');
 					generateFile(fileStr, _combinePath, 'index.js')
 				})
 			})

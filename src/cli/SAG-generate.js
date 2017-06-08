@@ -13,17 +13,17 @@ program
   .option("-d, --default", "default outputMode")
   .option("-a, --apiOnly", "only output api function list")
   .option("-A, --all", "output include FetchFastModel")
-	.command('[inputPath]', 'inputPath')
-  .action(function (_ip) {
-		inputPath = _ip
-  })
-	.command('[outputPath]', 'inputPath')
-  .action(function (_op) {
-		outputPath = _op
+	.command('<ip> [op]', 'user define')
+  .action(function (ip, op) {
+		inputPath = ip
+		outputPath = op
+		console.log(inputPath, outputPath, 'inputPathinputPathinputPath');
   })
 
 program
   .parse(process.argv);
+
+console.log(inputPath, 'inputPathinputPathinputPath');
 
 if (inputPath) {
 	if (!outputPath) {
@@ -45,6 +45,7 @@ if (inputPath) {
 		outputPath: outputPath || './SAG',
 		outputMode
 	}
+	console.log(excConfig, 'excConfigexcConfigexcConfigexcConfig');
 	init(excConfig)
 } else {
 	init()

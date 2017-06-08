@@ -4,6 +4,7 @@ var fs = require('fs')
 var path = require('path')
 // var pathConfig = require('../config')
 
+
 const configKeys = [
   'needAuth',
   'formData',
@@ -51,12 +52,15 @@ function getByUrl (inputPath, outputPath, outputMode) {
 				reject(err);
 				return;
 			}
-			console.log(outputPath, 'outputPathoutputPath');
 			const configListPath = path.join(outputPath, 'api-config-list.js')
 			let apiConfigList = fs.existsSync(configListPath) ? require(configListPath) : []
 			if (!apiConfigList.length) apiConfigList = []
-			const swaggerObj = JSON.parse(body)
-			return resolve(getConfigList(apiConfigList, swaggerObj, outputMode))
+			if (body && body.paths) {
+				const swaggerObj = JSON.parse(body)
+				return resolve(getConfigList(apiConfigList, swaggerObj, outputMode))
+			} else {
+				console.warn(chalk.bgRed(`请求失败: ${body}`))
+			}
 		})
   });
 }

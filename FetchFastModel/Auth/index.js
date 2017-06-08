@@ -6,11 +6,11 @@
 // }
 
 // 使用时将FFModel文件夹名称放入到页面的model下
-// 本文件更新时间：08-06-2017 17:02
+// 本文件更新时间：08-06-2017 22:18
 
 const FFModelCombine = [
 	{
-		key: "GetV1Customers",
+		key: "PostV1AuthSmsCode",
 		initialProps: {
 			data: [
 			]
@@ -26,7 +26,7 @@ const FFModelCombine = [
       }
 	},
 	{
-		key: "GetCustomer",
+		key: "PostV1AuthLoginPhone",
 		initialProps: {
 			data: [
 			]
@@ -42,23 +42,7 @@ const FFModelCombine = [
       }
 	},
 	{
-		key: "GetCustomerAttention",
-		initialProps: {
-			data: [
-			]
-		},
-		select: function select(res) {
-        console.log(item.name + '\'s response is: ' + res);
-        return {
-          data: []
-        };
-      },
-		error: function error(_error) {
-        return _error;
-      }
-	},
-	{
-		key: "GetCustomerRead",
+		key: "PatchV1AuthResetPassword",
 		initialProps: {
 			data: [
 			]
