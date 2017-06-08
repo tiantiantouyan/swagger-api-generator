@@ -1,3 +1,3 @@
 #!/usr/bin/env node 
 
-require('../lib/cli/SAG-Json');
+require('../lib/cli/sag-init');
