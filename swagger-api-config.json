@@ -1,6 +1,7 @@
 {
 	"inputMode": "json",
-	"outputMode": "default",
 	"inputPath": "./swagger.json",
-	"outputPath": "./src/api"
+	"outputMode": "default",
+	"outputPath": "./test/api",
+	"baseURL": "http://ec2-52-201-242-128.compute-1.amazonaws.com/mocks/f4b769f1-2344-4208-8715-e268db1ea14a"
 }

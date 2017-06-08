@@ -9,7 +9,8 @@ import {
 import {
 	generateConfigList,
 	generateApiList,
-	generateFFModel
+	generateFFModel,
+	genereteRelyFiles
 } from '../models';
 import { generateFile } from '../util/generate-file'
 
@@ -66,5 +67,6 @@ export function init () {
 				break;
 			}
 		}
+		genereteRelyFiles(outputPath)
 	})
 }

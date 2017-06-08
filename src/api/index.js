@@ -1,6 +1,9 @@
-import api from './client'
+// apiRequest是一个封装了axios请求的函数
+// https://github.com/mzabriskie/axios
+// 你也可以自己定义 apiRequest 来发起客户端网络请求
+// 文件更新时间：
+import { apiRequest } from 'swagger-api-generator'
 
-// 本文件使用configList生成器生成的configList文件生成，请不要手动修改
 
 export function GetUserProfile (payload) {
 	const { user_id } = payload
@@ -8,7 +11,7 @@ export function GetUserProfile (payload) {
 		method: 'get',
 		url: `/v1/users/${user_id}/profile`,
 	}
-	return api.Request(config)
+	return apiRequest(config)
 }
 
 

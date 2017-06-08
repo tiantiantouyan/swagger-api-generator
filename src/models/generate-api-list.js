@@ -79,7 +79,7 @@ function getApiPathParams (data) {
 function getApiDataParams (data) {
   let output = '\tconst data = {}\n' +
     `\tconst dataKeyList = ${getKeys(data)}\n` +
-    `\tdataKeyList.forEach(key => {\n` +
+    `\tforEach(dataKeyList, key => {\n` +
       `\t\tif (payload[key]) {\n` +
         `\t\t\tdata[key] = payload[key]\n` +
       `\t\t}\n` +
@@ -90,7 +90,7 @@ function getApiDataParams (data) {
 function getApiQueryParams (data) {
   let output = '\tconst params = {}\n' +
     `\tconst paramsKeyList = ${getKeys(data)}\n` +
-    `\tparamsKeyList.forEach(key => {\n` +
+    `\tforEach(paramsKeyList, key => {\n` +
       `\t\tif (payload[key]) {\n` +
         `\t\t\tparams[key] = payload[key]\n` +
       `\t\t}\n` +

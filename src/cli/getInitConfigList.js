@@ -128,7 +128,7 @@ function filterUnExistInSwagger (list, swaggerObj) {
 }
 
 // // apiObj 是 path[某一个path][某一种方法] 如 path['/v1/users/{user_id}/attentions']['get']
-function generateApi (path, method, apiObj, outputMode) {
+function generateApi (path, method, apiObj, outputMode) { // 新旧都会过这里
   let params = {}
   if (apiObj.parameters) {
     apiObj.parameters.forEach(param => {

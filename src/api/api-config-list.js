@@ -1,5 +1,4 @@
 
-/** 在本文件中你需要做的就是给每一个通过swagger生成并且之前未做过配置的的api进行配置 **/
 
 // {
 //   description: swaggerApiObject的描述字段,
@@ -10,12 +9,11 @@
 //   needAuth: 存在该字段时并且为true时调用api时会绑定用户access_token,
 //   easySignature: 存在该字段时并且为true时调用api会生成参数签名,
 //   formData:存在该字段时并且为true时调用api时使用表单提交的接口配置 api.formDataRequest
-//   middleware:函数，将配置好的api参数传递出来做自定义处理，需要return新的api config
 // }
 
 // 可以访问附属后台
 // http://localhost:1000/editme
-// 查看configList表格，进行查看你未配置FFmodel的api等操作
+// 查看configList表格，查看api的相关配置
 
 const configList = [
 	{
@@ -33,7 +31,8 @@ const configList = [
 		tags: [
 			"users"
 		],
-		name: "GetUserProfile"
+		name: "GetUserProfile",
+		needAuth: true
 	},
 	{
 		description: "-------send sms code----------",
