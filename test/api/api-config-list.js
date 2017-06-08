@@ -12,7 +12,7 @@
 // 可以访问附属后台
 // http://localhost:1000/editme
 // 查看configList列表
-// 本文件更新时间：08-06-2017 15:49
+// 本文件更新时间：08-06-2017 17:02
 
 const configList = [
 	{
@@ -108,7 +108,7 @@ const configList = [
 		FFModelCombine: "Auth"
 	},
 	{
-		description: "------鑾峰彇绛涢€夐」淇℃伅-------",
+		description: "------获取筛选项信息-------",
 		method: "get",
 		path: "/v1/filter/items",
 		parameters: {
@@ -126,7 +126,7 @@ const configList = [
 		FFModelCombine: "Filter"
 	},
 	{
-		description: "------鑾峰彇鍐呭鍒嗘瀽鏁版嵁-------",
+		description: "------获取内容分析数据-------",
 		method: "get",
 		path: "/v1/articles",
 		parameters: {
@@ -172,7 +172,7 @@ const configList = [
 		FFModelCombine: "Articles"
 	},
 	{
-		description: "------鑾峰彇鍐呭闃呰鎯呭喌-------",
+		description: "------获取内容阅读情况-------",
 		method: "get",
 		path: "/v1/articles/{article_id}",
 		parameters: {
@@ -233,7 +233,7 @@ const configList = [
 				},
 				{
 					key: "author_id",
-					require: "true"
+					require: "false"
 				},
 				{
 					key: "link",
@@ -252,7 +252,7 @@ const configList = [
 		FFModelCombine: "Protected"
 	},
 	{
-		description: "------鑾峰彇瀹㈡埛淇℃伅鍒楄〃-------",
+		description: "------获取客户信息列表-------",
 		method: "get",
 		path: "/v1/customers",
 		parameters: {
@@ -302,7 +302,7 @@ const configList = [
 		FFModelCombine: "Customers"
 	},
 	{
-		description: "------鑾峰彇鍗曚竴瀹㈡埛淇℃伅-------",
+		description: "------获取单一客户信息-------",
 		method: "get",
 		path: "/v1/customers/{customer_id}",
 		parameters: {
@@ -320,7 +320,7 @@ const configList = [
 		FFModelCombine: "Customers"
 	},
 	{
-		description: "------瀵规垜鐨勫叧娉ㄦ儏鍐�-------",
+		description: "------对我的关注情况-------",
 		method: "get",
 		path: "/v1/customers/{customer_id}/attention_status",
 		parameters: {
@@ -344,7 +344,7 @@ const configList = [
 		FFModelCombine: "Customers"
 	},
 	{
-		description: "------闃呰鏄庣粏-------",
+		description: "------阅读明细-------",
 		method: "get",
 		path: "/v1/customers/{customer_id}/read_details",
 		parameters: {
@@ -372,7 +372,7 @@ const configList = [
 		FFModelCombine: "Customers"
 	},
 	{
-		description: "------鏈烘瀯涓殑瀹㈡埛淇℃伅-------",
+		description: "------机构中的客户信息-------",
 		method: "get",
 		path: "/v1/organizations/{organization_id}",
 		parameters: {
@@ -390,7 +390,7 @@ const configList = [
 		FFModelCombine: "Organizations"
 	},
 	{
-		description: "------鏈烘瀯鎵€鏈夊鎴峰鎴戠殑鍏虫敞鎯呭喌-------",
+		description: "------机构所有客户对我的关注情况-------",
 		method: "get",
 		path: "/v1/organizations/{organization_id}/attention_status",
 		parameters: {
@@ -414,7 +414,7 @@ const configList = [
 		FFModelCombine: "Organizations"
 	},
 	{
-		description: "------闃呰鏄庣粏-------",
+		description: "------阅读明细-------",
 		method: "get",
 		path: "/v1/organizations/{organization_id}/read_details",
 		parameters: {
@@ -442,7 +442,7 @@ const configList = [
 		FFModelCombine: "Organizations"
 	},
 	{
-		description: "------鑾峰彇鏈烘瀯鍜屽鎴风殑鎻愮ず-------",
+		description: "------获取机构和客户的提示-------",
 		method: "get",
 		path: "/v1/search_tips",
 		parameters: {
@@ -471,11 +471,15 @@ const configList = [
 				},
 				{
 					key: "reader_id",
-					require: "true"
+					require: "false"
 				},
 				{
 					key: "author_id",
 					require: "true"
+				},
+				{
+					key: "openid",
+					require: "false"
 				}
 			]
 		},
@@ -497,7 +501,11 @@ const configList = [
 				},
 				{
 					key: "user_id",
-					require: "true"
+					require: "false"
+				},
+				{
+					key: "openid",
+					require: "false"
 				}
 			]
 		},

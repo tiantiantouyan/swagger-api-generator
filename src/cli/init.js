@@ -14,7 +14,7 @@ import {
 } from '../models';
 import { generateFile } from '../util/generate-file'
 
-export function init () {
+export async function init () {
 	let excuteConfig = defaultConfig
 	const configPath = path.join(basePath, './swagger-api-config.json')
 	jsonfile.readFile(configPath, function(err, config) {
@@ -29,20 +29,38 @@ export function init () {
 				...config
 			}
 		}
-		if (!excuteConfig.inputPath) {
-			console.log(chalk.blue('"inputPath" is undefined, please define this parameter\n'))
-			return;
-		}
-		excuteConfig.inputPath = path.join(basePath, excuteConfig.inputPath)
-		excuteConfig.outputPath = path.join(basePath, excuteConfig.outputPath)
 
-		const configList = getInitConfigList(excuteConfig)
-
-		console.log('configListconfigList', configList);
 		const {
+			inputMode,
+			inputPath,
 			outputPath,
 			outputMode
 		} = excuteConfig
+
+		if (!inputPath) {
+			console.log(chalk.blue('"inputPath" is undefined, please define this parameter\n'))
+			return;
+		}
+
+		if (inputMode !== 'url') {
+			excuteConfig.inputPath = path.join(basePath, inputPath)
+			excuteConfig.outputPath = path.join(basePath, outputPath)
+		}
+		const configList = getInitConfigList(excuteConfig)
+		// console.log(configList, 'configListconfigList');
+			.then(function (configList) {
+				console.log(configList, 'configListconfigList');
+				generateOutput (configList, outputPath, outputMode)
+			})
+	})
+}
+
+function generateOutput (configList, outputPath, outputMode) {
+		if (!(configList && configList.length)) {
+			console.log(chalk.bgRed('未读取到swagger api 相关数据，请检查数据源:json格式是否正确或者网络请求是否正常'));
+			return;
+		}
+		console.log('configList:', configList);
 		switch (outputMode) {
 			case 'default':
 			default: {
@@ -68,5 +86,12 @@ export function init () {
 			}
 		}
 		genereteRelyFiles(outputPath)
-	})
+		console.log(chalk.white('┌────────────────────────────────────────────────────────────────────────────┐'));
+		console.log(chalk.white('│ complete !                                                                 │'));
+		console.log(chalk.white('│ complete !                                                                 │'));
+		console.log(chalk.white('│ complete !                                                                 │'));
+		console.log(chalk.white('│ complete !                                                                 │'));
+		console.log(chalk.white('│ complete !                                                                 │'));
+		console.log(chalk.white('│ complete !                                                                 │'));
+		console.log(chalk.white('└────────────────────────────────────────────────────────────────────────────┘'));
 }

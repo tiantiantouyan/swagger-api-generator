@@ -27,9 +27,12 @@
   "dependencies": {
     "axios": "^0.16.2",
     "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.24.1",
+    "babel-runtime": "^6.23.0",
     "colors": "^1.1.2",
     "commander": "^2.9.0",
     "elegant-spinner": "^1.0.1",
@@ -38,6 +41,7 @@
     "jsonfile": "^3.0.0",
     "log-update": "^2.0.0",
     "mkdirp": "^0.5.1",
+    "request": "^2.81.0",
     "rimraf": "^2.6.1",
     "shelljs": "^0.7.7"
   },
@@ -45,5 +49,8 @@
     "SAG": "bin/SAG.js",
     "SAG-Json": "bin/SAG-Json.js",
     "SAG-Url": "bin/SAG-Url.js"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0"
   }
 }

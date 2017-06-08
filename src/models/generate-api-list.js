@@ -28,7 +28,8 @@ const PAYLOAD = {
 
 
 function generateApi (api) {
-  let output = `export function ${api.name} (payload) {\n`
+  let output = `${api.description}\n` +
+		`export function ${api.name} (payload) {\n`
   if (api.formData) {
     output +=
       `\tconst { ${PAYLOAD.ATTACHMENT}, ${PAYLOAD.USERID}, ${PAYLOAD.Authorization} } = payload\n` +
@@ -67,7 +68,7 @@ function generateApi (api) {
     }
     output += `\treturn api.Request(config)\n`
   }
-  output += '}\n\n'
+  output += '}\n'
   return output
 }
 

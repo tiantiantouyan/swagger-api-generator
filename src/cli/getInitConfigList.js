@@ -10,7 +10,7 @@ const configKeys = [
   'easySignature'
 ]
 
-export function getInitConfigList (config) {
+export async function getInitConfigList (config) {
 	const {
  		inputMode,
 		inputPath,
@@ -19,19 +19,14 @@ export function getInitConfigList (config) {
 	} = config
 	let configList = []
 	switch (inputMode) {
+		default:
 		case 'json': {
-			configList = getByJson(inputPath, outputPath, outputMode);
-			break;
+			return getByJson(inputPath, outputPath, outputMode);
 		}
 		case 'url':  {
-			configList = getByUrl(inputPath, outputPath, outputMode);
-			break;
-		}
-		default: {
-			configList = getByJson(inputPath, outputPath, outputMode);break;
+			return await getByUrl(inputPath, outputPath, outputMode)
 		}
 	}
-	return configList
 }
 
 function getByJson (inputPath, outputPath, outputMode) {
@@ -47,9 +42,27 @@ function getByJson (inputPath, outputPath, outputMode) {
 	}
 }
 
-function getByUrl (url) {
-	console.log('敬请期待');
+function getByUrl (inputPath, outputPath, outputMode) {
+	var request = require('request');
+  return new Promise((resolve, reject) => {
+		request(inputPath, function (error, response, body) {
+			if (error) {
+				console.log(chalk.bgRed(`${inputPath}访问错误`));
+				reject(err); return;
+			}
+			const configListPath = path.join(outputPath, 'api-config-list.js')
+			let apiConfigList = fs.existsSync(configListPath) ? require(configListPath) : []
+			if (!apiConfigList.length) apiConfigList = []
+			const swaggerObj = JSON.parse(body)
+			console.log(swaggerObj, 'swaggerObj');
+			return resolve(getConfigList(apiConfigList, swaggerObj, outputMode))
+		})
+  });
 }
+
+// async function getByUrl (inputPath, outputPath, outputMode) {
+// 	await getRequest(inputPath, outputPath, outputMode)
+// }
 
 
 function getConfigList (originList, swaggerObj, outputMode) {
