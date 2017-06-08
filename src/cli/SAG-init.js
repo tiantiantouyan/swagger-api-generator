@@ -12,8 +12,8 @@ program
   .version(version());
 
 const configStr = `{\n` +
-	`\t"inputMode": "json" // "json", "url"\n` +
-	`\t"inputPath": "./swagger.json" // relative path\n` +
+	`\t"inputMode": "json", // "json", "url"\n` +
+	`\t"inputPath": "./swagger.json", // relative path\n` +
 	`\t"outputMode": "default", // "default", "apiOnly", "all"\n` +
 	`\t"outputPath": "./src/api" // relative path\n`  +
 `}\n`

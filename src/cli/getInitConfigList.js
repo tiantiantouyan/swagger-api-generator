@@ -25,6 +25,7 @@ export async function getInitConfigList (config) {
 			return getByJson(inputPath, outputPath, outputMode);
 		}
 		case 'url':  {
+			console.log(chalk.strikethrough(`requesting... 请求中...`));
 			return await getByUrl(inputPath, outputPath, outputMode)
 		}
 	}

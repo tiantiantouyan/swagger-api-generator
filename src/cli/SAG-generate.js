@@ -17,13 +17,12 @@ program
   .action(function (ip, op) {
 		inputPath = ip
 		outputPath = op
-		console.log(inputPath, outputPath, 'inputPathinputPathinputPath');
+		console.log(chalk.magenta(`inputPath: ${inputPath}\noutputPath: ${outputPath}`));
   })
 
 program
   .parse(process.argv);
 
-console.log(inputPath, 'inputPathinputPathinputPath');
 
 if (inputPath) {
 	if (!outputPath) {
@@ -45,7 +44,7 @@ if (inputPath) {
 		outputPath: outputPath || './SAG',
 		outputMode
 	}
-	console.log(excConfig, 'excConfigexcConfigexcConfigexcConfig');
+	console.log(chalk.magenta(`执行输出配置excConfig:`), excConfig, '\n');
 	init(excConfig)
 } else {
 	init()

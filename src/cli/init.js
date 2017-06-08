@@ -29,7 +29,6 @@ export function init (excuteConfig) {
 		config.inputPath = path.join(basePath, config.inputPath)
 	}
 	config.outputPath = path.join(basePath, config.outputPath)
-	console.log(config.outputPath, 'outputPathoutputPathoutputPathoutputPath');
 	excuteOutput(excuteConfig)
 }
 

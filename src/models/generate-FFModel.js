@@ -53,7 +53,6 @@ function generaFFModelFileStr (list) {
 			arrayOutputStr += `${indent}${stringObject(data, tabIndex)},\n`
 		}
   })
-	console.log(',arrayOutputStrarrayOutputStr', arrayOutputStr);
   return arrayOutputStr
 }
 
