@@ -48,7 +48,8 @@ function getByUrl (inputPath, outputPath, outputMode) {
 		request(inputPath, function (error, response, body) {
 			if (error) {
 				console.log(chalk.bgRed(`${inputPath}访问错误`));
-				reject(err); return;
+				reject(err);
+				return;
 			}
 			console.log(outputPath, 'outputPathoutputPath');
 			const configListPath = path.join(outputPath, 'api-config-list.js')

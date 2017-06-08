@@ -1,12 +1,10 @@
+var fs = require('fs')
+
 const fileHeadInfo = () => {
-	return `// apiRequest是一个封装了axios请求的函数\n` +
-	  `// https://github.com/mzabriskie/axios\n` +
-	  `// 你也可以在./client下 自定义 apiRequest 来发起客户端网络请求\n` +
-	  `// 本文件更新时间：${getDate(new Date())}\n` +
+	return `${fs.readFileSync('./api-list-header.js', 'utf8').toString()}` +
 	  `import api from './client'\n` +
 	  `import { forEach } from './utils'\n\n`
 }
-
 
 	export function getApiListTemplate (outputStr) {
 	  return `${fileHeadInfo()}${outputStr}\n`

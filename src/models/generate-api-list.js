@@ -28,7 +28,7 @@ const PAYLOAD = {
 
 
 function generateApi (api) {
-  let output = `${api.description}\n` +
+  let output = `// ${api.description}\n` +
 		`export function ${api.name} (payload) {\n`
   if (api.formData) {
     output +=

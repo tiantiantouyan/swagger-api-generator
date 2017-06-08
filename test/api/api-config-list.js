@@ -1,17 +1,23 @@
-// {
-//   description: api的描述,
-//   method: api的请求方法,
-//   path: api请求后缀地址,
-//   parameters: api请求时可能需要的参数,
-//   tags: api的标签,
-//   needAuth: 存在该字段时并且为true时调用api时会绑定用户access_token,
-//   easySignature: 存在该字段时并且为true时调用api会生成参数签名,
-//   formData:存在该字段时并且为true时调用api时使用表单提交的接口配置 api.formDataRequest
-// }
+/* ┌────────────────────────────────────────────────────────────────────────────┐  */ 
+/**
+ * 默认字段
+ * @param {description} [string] api的描述
+ * @param {method} [string] api的请求方法
+ * @param {path} [string] api请求后缀地址
+ * @param {parameters} [string] api请求时可能需要的参数
+ * @param {tags} [string] api的标签
+ */
+/*  └────────────────────────────────────────────────────────────────────────────┘ */
 
-// 可以访问附属后台
-// http://localhost:1000/editme
-// 查看configList列表
+/* ┌────────────────────────────────────────────────────────────────────────────┐  */ 
+/**
+ * 可选字段
+ * @param {needAuth} [bool] true时调用api时会读取用户信息, !仅仅是在api的function内部读出userid与token，调用时仍要保证传入用户信息，可使用封装函数callBindAuth
+ * @param {easySignature} [bool] true时调用api会生成参数签名
+ * @param {formData} [bool] true时调用api时使用表单提交的方法配置: api.formDataRequest
+ */
+/*  └────────────────────────────────────────────────────────────────────────────┘ */
+
 // 本文件更新时间：08-06-2017 19:24
 
 const configList = [

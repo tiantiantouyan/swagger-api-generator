@@ -74,6 +74,9 @@ function excuteOutput (excuteConfig) {
 		.then(function (configList) {
 			generateOutput (configList, outputPath, outputMode)
 		})
+		.catch(function (err) {
+			console.log(chalk.bgRed('输入源有误'));
+		})
 }
 
 

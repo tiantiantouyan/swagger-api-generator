@@ -19,7 +19,7 @@ const configStr = `{\n` +
 `}\n`
 
 if (!fs.existsSync(path.join(basePath, './swagger-api-config'))) {
-	generateFile(configStr, basePath, 'swagger-api-config')
+	generateFile(configStr, basePath, 'swagger-api-config.json')
 	console.log(chalk.bgYellow('成功生成swagger-api-config.json配置文件'));
 }
 
