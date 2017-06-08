@@ -1,3 +1,3 @@
 #!/usr/bin/env node 
 
-require('../lib/cli/sag-create');
+require('../lib/cli/sag-generate');
