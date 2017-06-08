@@ -1,1 +1,7 @@
-{ "presets": ["es2015", "stage-0"] }
+{
+	"presets": ["es2015", "stage-0"],
+  "ignore": [
+    "src/templates/utils.js",
+    "src/templates/client.js"
+  ]
+}

@@ -12,7 +12,7 @@ const fileHeadInfo = () => {
 	  `// 可以访问附属后台\n` +
 	  `// http://localhost:1000/editme\n` + // 这里编辑后台对应的路由
 	  `// 查看configList列表\n` +
-	  `// 本文件更新时间：${new Date().toDateString()}\n`
+	  `// 本文件更新时间：${getDate(new Date())}\n`
 }
 
 
@@ -21,3 +21,8 @@ const fileHeadInfo = () => {
       `const configList = [\n${str}]\n\n` +
       `module.exports = configList\n`
 	}
+
+function getDate (d) {
+	return ("0" + d.getDate()).slice(-2) + "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" +
+  	d.getFullYear() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+}
