@@ -48,7 +48,8 @@
   "bin": {
     "SAG": "bin/sag.js",
     "SAG-init": "bin/sag-init.js",
-    "SAG-generate": "bin/sag-generate.js"
+    "SAG-generate": "bin/sag-generate.js",
+    "SAG-g": "bin/sag-generate.js"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0"
