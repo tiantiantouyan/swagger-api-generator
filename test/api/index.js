@@ -1,7 +1,7 @@
 // apiRequest是一个封装了axios请求的函数
 // https://github.com/mzabriskie/axios
 // 你也可以在./client下 自定义 apiRequest 来发起客户端网络请求
-// 本文件更新时间：08-06-2017 17:02
+// 本文件更新时间：08-06-2017 19:24
 import api from './client'
 import { forEach } from './utils'
 

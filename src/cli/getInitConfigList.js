@@ -50,11 +50,11 @@ function getByUrl (inputPath, outputPath, outputMode) {
 				console.log(chalk.bgRed(`${inputPath}访问错误`));
 				reject(err); return;
 			}
+			console.log(outputPath, 'outputPathoutputPath');
 			const configListPath = path.join(outputPath, 'api-config-list.js')
 			let apiConfigList = fs.existsSync(configListPath) ? require(configListPath) : []
 			if (!apiConfigList.length) apiConfigList = []
 			const swaggerObj = JSON.parse(body)
-			console.log(swaggerObj, 'swaggerObj');
 			return resolve(getConfigList(apiConfigList, swaggerObj, outputMode))
 		})
   });

@@ -2,6 +2,5 @@
 	"inputMode": "url",
 	"inputPath": "http://10.100.242.8:8080/v1/swagger_doc",
 	"outputMode": "all",
-	"outputPath": "./test/api",
-	"baseURL": "http://ec2-52-201-242-128.compute-1.amazonaws.com/mocks/f4b769f1-2344-4208-8715-e268db1ea14a"
+	"outputPath": "./test/api"
 }

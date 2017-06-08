@@ -18,9 +18,9 @@ export async function init () {
 	let excuteConfig = defaultConfig
 	const configPath = path.join(basePath, './swagger-api-config.json')
 	jsonfile.readFile(configPath, function(err, config) {
-	  console.log(err, config, 'jsonfilereadFile')
+	  // console.log(err, config, 'jsonfilereadFile')
 		if (err) {
-			console.log(chalk.blue('cannot find swagger-api-config.json, please define this file\n'))
+			console.warn(chalk.blue('cannot find swagger-api-config.json, please define this file\n'))
 			return;
 		}
 		if (config) {
@@ -44,12 +44,10 @@ export async function init () {
 
 		if (inputMode !== 'url') {
 			excuteConfig.inputPath = path.join(basePath, inputPath)
-			excuteConfig.outputPath = path.join(basePath, outputPath)
 		}
+		excuteConfig.outputPath = path.join(basePath, outputPath)
 		const configList = getInitConfigList(excuteConfig)
-		// console.log(configList, 'configListconfigList');
 			.then(function (configList) {
-				console.log(configList, 'configListconfigList');
 				generateOutput (configList, outputPath, outputMode)
 			})
 	})
@@ -60,7 +58,6 @@ function generateOutput (configList, outputPath, outputMode) {
 			console.log(chalk.bgRed('未读取到swagger api 相关数据，请检查数据源:json格式是否正确或者网络请求是否正常'));
 			return;
 		}
-		console.log('configList:', configList);
 		switch (outputMode) {
 			case 'default':
 			default: {

@@ -12,7 +12,7 @@
 // 可以访问附属后台
 // http://localhost:1000/editme
 // 查看configList列表
-// 本文件更新时间：08-06-2017 17:02
+// 本文件更新时间：08-06-2017 19:24
 
 const configList = [
 	{
