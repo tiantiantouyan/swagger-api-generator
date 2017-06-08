@@ -1,5 +1,5 @@
 const fileHeadInfo = () => {
-	return   `// {\n` +
+	return `// {\n` +
 	  `//   description: api的描述,\n` +
 	  `//   method: api的请求方法,\n` +
 	  `//   path: api请求后缀地址,\n` +
@@ -7,7 +7,7 @@ const fileHeadInfo = () => {
 	  `//   tags: api的标签,\n` +
 	  `//   needAuth: 存在该字段时并且为true时调用api时会绑定用户access_token,\n` +
 	  `//   easySignature: 存在该字段时并且为true时调用api会生成参数签名,\n` +
-	  `//   formData:存在该字段时并且为true时调用api时使用表单提交的接口配置 api.formDataRequest\n`
+	  `//   formData:存在该字段时并且为true时调用api时使用表单提交的接口配置 api.formDataRequest\n` +
 	  `// }\n\n` +
 	  `// 可以访问附属后台\n` +
 	  `// http://localhost:1000/editme\n` + // 这里编辑后台对应的路由
@@ -17,7 +17,7 @@ const fileHeadInfo = () => {
 
 
 	export function getConfigListTemplate (str) {
-		return `${fileHeadInfo}\n` +
+		return `${fileHeadInfo()}\n` +
       `const configList = [\n${str}]\n\n` +
       `module.exports = configList\n`
 	}

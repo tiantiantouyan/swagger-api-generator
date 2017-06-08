@@ -1,7 +1,19 @@
-function fileHeadInfo() {
-	return "// {\n" + "//   description: api\u7684\u63CF\u8FF0,\n" + "//   method: api\u7684\u8BF7\u6C42\u65B9\u6CD5,\n" + "//   path: api\u8BF7\u6C42\u540E\u7F00\u5730\u5740,\n" + "//   parameters: api\u8BF7\u6C42\u65F6\u53EF\u80FD\u9700\u8981\u7684\u53C2\u6570,\n" + "//   tags: api\u7684\u6807\u7B7E,\n" + "//   needAuth: \u5B58\u5728\u8BE5\u5B57\u6BB5\u65F6\u5E76\u4E14\u4E3Atrue\u65F6\u8C03\u7528api\u65F6\u4F1A\u7ED1\u5B9A\u7528\u6237access_token,\n" + "//   easySignature: \u5B58\u5728\u8BE5\u5B57\u6BB5\u65F6\u5E76\u4E14\u4E3Atrue\u65F6\u8C03\u7528api\u4F1A\u751F\u6210\u53C2\u6570\u7B7E\u540D,\n" + "//   formData:\u5B58\u5728\u8BE5\u5B57\u6BB5\u65F6\u5E76\u4E14\u4E3Atrue\u65F6\u8C03\u7528api\u65F6\u4F7F\u7528\u8868\u5355\u63D0\u4EA4\u7684\u63A5\u53E3\u914D\u7F6E api.formDataRequest\n"(_templateObject) + "// \u53EF\u4EE5\u8BBF\u95EE\u9644\u5C5E\u540E\u53F0\n" + "// http://localhost:1000/editme\n" + // 这里编辑后台对应的路由
-	"// \u67E5\u770BconfigList\u5217\u8868\n" + ("// \u672C\u6587\u4EF6\u66F4\u65B0\u65F6\u95F4\uFF1A" + getDate(new Date()) + "\n");
-}
+// {
+//   description: api的描述,
+//   method: api的请求方法,
+//   path: api请求后缀地址,
+//   parameters: api请求时可能需要的参数,
+//   tags: api的标签,
+//   needAuth: 存在该字段时并且为true时调用api时会绑定用户access_token,
+//   easySignature: 存在该字段时并且为true时调用api会生成参数签名,
+//   formData:存在该字段时并且为true时调用api时使用表单提交的接口配置 api.formDataRequest
+// }
+
+// 可以访问附属后台
+// http://localhost:1000/editme
+// 查看configList列表
+// 本文件更新时间：08-06-2017 15:49
+
 const configList = [
 	{
 		description: "------get----profile-------",
@@ -18,7 +30,8 @@ const configList = [
 		tags: [
 			"users"
 		],
-		name: "GetUserProfile"
+		name: "GetUserProfile",
+		FFModelCombine: "Users"
 	},
 	{
 		description: "-------send sms code----------",
@@ -43,7 +56,8 @@ const configList = [
 		tags: [
 			"auth"
 		],
-		name: "PostV1AuthSmsCode"
+		name: "PostV1AuthSmsCode",
+		FFModelCombine: "Auth"
 	},
 	{
 		description: "--------login with phone number--------",
@@ -64,7 +78,8 @@ const configList = [
 		tags: [
 			"auth"
 		],
-		name: "PostV1AuthLoginPhone"
+		name: "PostV1AuthLoginPhone",
+		FFModelCombine: "Auth"
 	},
 	{
 		description: "-------find back password---------",
@@ -89,7 +104,8 @@ const configList = [
 		tags: [
 			"auth"
 		],
-		name: "PatchV1AuthResetPassword"
+		name: "PatchV1AuthResetPassword",
+		FFModelCombine: "Auth"
 	},
 	{
 		description: "------鑾峰彇绛涢€夐」淇℃伅-------",
@@ -106,7 +122,8 @@ const configList = [
 		tags: [
 			"filter"
 		],
-		name: "GetV1FilterItems"
+		name: "GetV1FilterItems",
+		FFModelCombine: "Filter"
 	},
 	{
 		description: "------鑾峰彇鍐呭鍒嗘瀽鏁版嵁-------",
@@ -151,7 +168,8 @@ const configList = [
 		tags: [
 			"articles"
 		],
-		name: "GetV1Articles"
+		name: "GetV1Articles",
+		FFModelCombine: "Articles"
 	},
 	{
 		description: "------鑾峰彇鍐呭闃呰鎯呭喌-------",
@@ -174,7 +192,8 @@ const configList = [
 		tags: [
 			"articles"
 		],
-		name: "GetArticle"
+		name: "GetArticle",
+		FFModelCombine: "Articles"
 	},
 	{
 		description: "get article by id",
@@ -191,7 +210,8 @@ const configList = [
 		tags: [
 			"contents"
 		],
-		name: "GetId"
+		name: "GetId",
+		FFModelCombine: "Contents"
 	},
 	{
 		description: "create article",
@@ -228,7 +248,8 @@ const configList = [
 		tags: [
 			"protected"
 		],
-		name: "PostV1ProtectedContents"
+		name: "PostV1ProtectedContents",
+		FFModelCombine: "Protected"
 	},
 	{
 		description: "------鑾峰彇瀹㈡埛淇℃伅鍒楄〃-------",
@@ -277,7 +298,8 @@ const configList = [
 		tags: [
 			"customers"
 		],
-		name: "GetV1Customers"
+		name: "GetV1Customers",
+		FFModelCombine: "Customers"
 	},
 	{
 		description: "------鑾峰彇鍗曚竴瀹㈡埛淇℃伅-------",
@@ -294,7 +316,8 @@ const configList = [
 		tags: [
 			"customers"
 		],
-		name: "GetCustomer"
+		name: "GetCustomer",
+		FFModelCombine: "Customers"
 	},
 	{
 		description: "------瀵规垜鐨勫叧娉ㄦ儏鍐�-------",
@@ -317,7 +340,8 @@ const configList = [
 		tags: [
 			"customers"
 		],
-		name: "GetCustomerAttention"
+		name: "GetCustomerAttention",
+		FFModelCombine: "Customers"
 	},
 	{
 		description: "------闃呰鏄庣粏-------",
@@ -344,7 +368,8 @@ const configList = [
 		tags: [
 			"customers"
 		],
-		name: "GetCustomerRead"
+		name: "GetCustomerRead",
+		FFModelCombine: "Customers"
 	},
 	{
 		description: "------鏈烘瀯涓殑瀹㈡埛淇℃伅-------",
@@ -361,7 +386,8 @@ const configList = [
 		tags: [
 			"organizations"
 		],
-		name: "GetOrganization"
+		name: "GetOrganization",
+		FFModelCombine: "Organizations"
 	},
 	{
 		description: "------鏈烘瀯鎵€鏈夊鎴峰鎴戠殑鍏虫敞鎯呭喌-------",
@@ -384,7 +410,8 @@ const configList = [
 		tags: [
 			"organizations"
 		],
-		name: "GetOrganizationAttention"
+		name: "GetOrganizationAttention",
+		FFModelCombine: "Organizations"
 	},
 	{
 		description: "------闃呰鏄庣粏-------",
@@ -411,7 +438,8 @@ const configList = [
 		tags: [
 			"organizations"
 		],
-		name: "GetOrganizationRead"
+		name: "GetOrganizationRead",
+		FFModelCombine: "Organizations"
 	},
 	{
 		description: "------鑾峰彇鏈烘瀯鍜屽鎴风殑鎻愮ず-------",
@@ -428,7 +456,8 @@ const configList = [
 		tags: [
 			"search_tips"
 		],
-		name: "GetV1Search"
+		name: "GetV1Search",
+		FFModelCombine: "Search_tips"
 	},
 	{
 		description: "create read logs",
@@ -453,7 +482,8 @@ const configList = [
 		tags: [
 			"journal"
 		],
-		name: "PostV1JournalReads"
+		name: "PostV1JournalReads",
+		FFModelCombine: "Journal"
 	},
 	{
 		description: "create share logs",
@@ -474,7 +504,8 @@ const configList = [
 		tags: [
 			"journal"
 		],
-		name: "PostV1JournalShares"
+		name: "PostV1JournalShares",
+		FFModelCombine: "Journal"
 	}
 ]
 

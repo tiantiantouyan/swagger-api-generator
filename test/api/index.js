@@ -1,11 +1,9 @@
 // apiRequest是一个封装了axios请求的函数
 // https://github.com/mzabriskie/axios
-// 你也可以自己定义 apiRequest 来发起客户端网络请求
-// 本文件更新时间：08-06-2017 15:10
+// 你也可以在./client下 自定义 apiRequest 来发起客户端网络请求
+// 本文件更新时间：08-06-2017 15:49
 import api from './client'
-
 import { forEach } from './utils'
-// 本文件使用configList生成器生成的configList文件生成，请不要手动修改
 
 export function GetUserProfile (payload) {
 	const { user_id } = payload

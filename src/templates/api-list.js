@@ -2,9 +2,9 @@ const fileHeadInfo = () => {
 	return `// apiRequest是一个封装了axios请求的函数\n` +
 	  `// https://github.com/mzabriskie/axios\n` +
 	  `// 你也可以在./client下 自定义 apiRequest 来发起客户端网络请求\n` +
-	  `// 本文件更新时间：${getDate(new Date())}\n\n` +
+	  `// 本文件更新时间：${getDate(new Date())}\n` +
 	  `import api from './client'\n` +
-	  `import { forEach } from './utils'\n`
+	  `import { forEach } from './utils'\n\n`
 }
 
 

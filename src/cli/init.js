@@ -9,7 +9,7 @@ import {
 import {
 	generateConfigList,
 	generateApiList,
-	generateFFModel,
+	generateFFModelFolder,
 	genereteRelyFiles
 } from '../models';
 import { generateFile } from '../util/generate-file'
@@ -60,7 +60,7 @@ export function init () {
 			case 'all': {
 				const configListOutput = generateConfigList(configList)
 				const ApiListOutput = generateApiList(configList)
-				const FFModelOutput = generateFFModel(configList)
+				generateFFModelFolder(configList, outputPath)
 				generateFile(configListOutput, outputPath, 'api-config-list.js')
 				generateFile(ApiListOutput, outputPath, 'index.js')
 				// generateFFModelFolder(ApiListOutput, outputPath)
