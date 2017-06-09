@@ -1,6 +1,6 @@
 {
   "name": "swagger-api-generator",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "generate api function by swagger",
   "main": "lib/index",
   "engine": {
