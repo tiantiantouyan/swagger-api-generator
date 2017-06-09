@@ -52,7 +52,7 @@ sag init
 
 ### Via CLI
 
->sag g `[inputPath]`(required) `[outputPath]` `<outputMode>`
+>sag g `[inputPath]`(required) `[outputPath]`(.json or url) `<outputMode>`
 
 ```sh
 sag g ./swagger.json ./src/api -A
@@ -70,7 +70,7 @@ sag g ./swagger.json ./src/api
 >省略输出模式
 
 ```sh
-sag g ./swagger.json 
+sag g http://~.swagger_doc 
 ```
 >省略输出路径和输入模式
 
@@ -135,6 +135,7 @@ sag g ./swagger.json
 },
 ```
 上述字段都是SAG运行必须依赖的参数，其他参数你看心情
+
 
 
 ## SwaggerJson Example:
@@ -232,3 +233,5 @@ sag g ./swagger.json
     }
 }
 ```
+
+
