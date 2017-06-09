@@ -27,6 +27,7 @@ SwaggerJson: 指用户(你)提供的Json输入源，本地的.swagger.json或者
 	"outputPath": "./SAG" // relative path
 }
 ```
+
 **——Initial Configuration**
 
 |Key Name|Value|Description|
@@ -58,17 +59,17 @@ sag g ./swagger.json ./src/api -A
 ```
 >通过在项目路径下的swagger.json文件，在项目路径下src/api文件夹下，生成全部可生成文件
 
-```
+```sh
 sag g ./swagger.json -a
 ```
 >省略输出路径，使用默认`./SAG`，仅生成 `index.js`和`依赖文件`
 
-```
+```sh
 sag g ./swagger.json ./src/api
 ```
 >省略输出模式
 
-```
+```sh
 sag g ./swagger.json 
 ```
 >省略输出路径和输入模式
@@ -109,7 +110,7 @@ sag g ./swagger.json
 **——添加临时/测试api接口**
 >在`本地SwaggerJson输入源`中暂时添加对应格式的api-json对象
 >
-```
+```json
 "/v1/organizations/{organization_id}/read_details": {
     "get": {
         "description": "------获取机构阅读信息-------",
