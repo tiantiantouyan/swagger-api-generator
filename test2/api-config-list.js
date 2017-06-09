@@ -1,23 +1,4 @@
-/* ┌────────────────────────────────────────────────────────────────────────────┐  */
-/**
-* 默认字段
-* @param {description} [string] api的描述
-* @param {method} [string] api的请求方法
-* @param {path} [string] api请求后缀地址
-* @param {parameters} [string] api请求时可能需要的参数
-* @param {tags} [string] api的标签
-*//*  └────────────────────────────────────────────────────────────────────────────┘ */
-
-/* ┌────────────────────────────────────────────────────────────────────────────┐  */
-/**
-* 可选字段
-* @param {needAuth} [bool] true时调用api时会读取用户信息, !仅仅是在api的function内部读出userid与token，调用时仍要保证传入用户信息，可使用封装函数callBindAuth
-* @param {easySignature} [bool] true时调用api会生成参数签名
-* @param {formData} [bool] true时调用api时使用表单提交的方法配置: api.formDataRequest
-*/
-/*  └────────────────────────────────────────────────────────────────────────────┘ */
-// 本文件更新时间：09-06-2017 10:26
-
+undefined
 const configList = [
 	{
 		description: "------get----profile-------",
@@ -27,7 +8,7 @@ const configList = [
 			path: [
 				{
 					key: "user_id",
-					require: "true"
+					require: true
 				}
 			]
 		},
@@ -45,15 +26,15 @@ const configList = [
 			formData: [
 				{
 					key: "phone",
-					require: "true"
+					require: true
 				},
 				{
 					key: "channel",
-					require: "true"
+					require: true
 				},
 				{
 					key: "action",
-					require: "true"
+					require: true
 				}
 			]
 		},
@@ -71,11 +52,11 @@ const configList = [
 			formData: [
 				{
 					key: "password",
-					require: "true"
+					require: true
 				},
 				{
 					key: "phone",
-					require: "true"
+					require: true
 				}
 			]
 		},
@@ -93,15 +74,15 @@ const configList = [
 			formData: [
 				{
 					key: "phone",
-					require: "true"
+					require: true
 				},
 				{
 					key: "code",
-					require: "true"
+					require: true
 				},
 				{
 					key: "password",
-					require: "true"
+					require: true
 				}
 			]
 		},
@@ -112,14 +93,14 @@ const configList = [
 		FFModelCombine: "Auth"
 	},
 	{
-		description: "------获取筛选项信息-------",
+		description: "------鑾峰彇绛涢€夐」淇℃伅-------",
 		method: "get",
 		path: "/v1/filter/items",
 		parameters: {
 			formData: [
 				{
 					key: "fields",
-					require: "false"
+					require: false
 				}
 			]
 		},
@@ -130,42 +111,42 @@ const configList = [
 		FFModelCombine: "Filter"
 	},
 	{
-		description: "------获取内容分析数据-------",
+		description: "------鑾峰彇鍐呭鍒嗘瀽鏁版嵁-------",
 		method: "get",
 		path: "/v1/articles",
 		parameters: {
 			query: [
 				{
 					key: "timescope",
-					require: "false"
+					require: false
 				},
 				{
 					key: "article_type",
-					require: "false"
+					require: false
 				},
 				{
 					key: "page",
-					require: "false"
+					require: false
 				},
 				{
 					key: "sort_by_time",
-					require: "false"
+					require: false
 				},
 				{
 					key: "sort_by_reader_number",
-					require: "false"
+					require: false
 				},
 				{
 					key: "sort_by_average_read_number",
-					require: "false"
+					require: false
 				},
 				{
 					key: "sort_by_share_times",
-					require: "false"
+					require: false
 				},
 				{
 					key: "per_page",
-					require: "false"
+					require: false
 				}
 			]
 		},
@@ -176,20 +157,20 @@ const configList = [
 		FFModelCombine: "Articles"
 	},
 	{
-		description: "------获取内容阅读情况-------",
+		description: "------鑾峰彇鍐呭闃呰鎯呭喌-------",
 		method: "get",
 		path: "/v1/articles/{article_id}",
 		parameters: {
 			path: [
 				{
 					key: "article_id",
-					require: "true"
+					require: true
 				}
 			],
 			query: [
 				{
 					key: "sort_by_read_times",
-					require: "false"
+					require: false
 				}
 			]
 		},
@@ -207,7 +188,7 @@ const configList = [
 			path: [
 				{
 					key: "id",
-					require: "true"
+					require: true
 				}
 			]
 		},
@@ -225,27 +206,27 @@ const configList = [
 			formData: [
 				{
 					key: "type",
-					require: "true"
+					require: true
 				},
 				{
 					key: "title",
-					require: "true"
+					require: true
 				},
 				{
 					key: "author",
-					require: "true"
+					require: true
 				},
 				{
 					key: "author_id",
-					require: "false"
+					require: true
 				},
 				{
 					key: "link",
-					require: "true"
+					require: true
 				},
 				{
 					key: "content",
-					require: "true"
+					require: true
 				}
 			]
 		},
@@ -256,46 +237,46 @@ const configList = [
 		FFModelCombine: "Protected"
 	},
 	{
-		description: "------获取客户信息列表-------",
+		description: "------鑾峰彇瀹㈡埛淇℃伅鍒楄〃-------",
 		method: "get",
 		path: "/v1/customers",
 		parameters: {
 			query: [
 				{
 					key: "timescope",
-					require: "false"
+					require: false
 				},
 				{
 					key: "level",
-					require: "false"
+					require: false
 				},
 				{
 					key: "org_type",
-					require: "false"
+					require: false
 				},
 				{
 					key: "duty_name",
-					require: "false"
+					require: false
 				},
 				{
 					key: "page",
-					require: "false"
+					require: false
 				},
 				{
 					key: "sort_by_level",
-					require: "false"
+					require: false
 				},
 				{
 					key: "sort_by_read_times",
-					require: "false"
+					require: false
 				},
 				{
 					key: "sort_by_share_times",
-					require: "false"
+					require: false
 				},
 				{
 					key: "per_page",
-					require: "false"
+					require: false
 				}
 			]
 		},
@@ -306,14 +287,14 @@ const configList = [
 		FFModelCombine: "Customers"
 	},
 	{
-		description: "------获取单一客户信息-------",
+		description: "------鑾峰彇鍗曚竴瀹㈡埛淇℃伅-------",
 		method: "get",
 		path: "/v1/customers/{customer_id}",
 		parameters: {
 			path: [
 				{
 					key: "customer_id",
-					require: "true"
+					require: true
 				}
 			]
 		},
@@ -324,20 +305,20 @@ const configList = [
 		FFModelCombine: "Customers"
 	},
 	{
-		description: "------对我的关注情况-------",
+		description: "------瀵规垜鐨勫叧娉ㄦ儏鍐�-------",
 		method: "get",
 		path: "/v1/customers/{customer_id}/attention_status",
 		parameters: {
 			query: [
 				{
 					key: "timescope",
-					require: "false"
+					require: false
 				}
 			],
 			path: [
 				{
 					key: "customer_id",
-					require: "true"
+					require: true
 				}
 			]
 		},
@@ -348,24 +329,24 @@ const configList = [
 		FFModelCombine: "Customers"
 	},
 	{
-		description: "------阅读明细-------",
+		description: "------闃呰鏄庣粏-------",
 		method: "get",
 		path: "/v1/customers/{customer_id}/read_details",
 		parameters: {
 			query: [
 				{
 					key: "sort_by_time",
-					require: "false"
+					require: false
 				},
 				{
 					key: "sort_by_read_times",
-					require: "false"
+					require: false
 				}
 			],
 			path: [
 				{
 					key: "customer_id",
-					require: "true"
+					require: true
 				}
 			]
 		},
@@ -376,14 +357,14 @@ const configList = [
 		FFModelCombine: "Customers"
 	},
 	{
-		description: "------机构中的客户信息-------",
+		description: "------鏈烘瀯涓殑瀹㈡埛淇℃伅-------",
 		method: "get",
 		path: "/v1/organizations/{organization_id}",
 		parameters: {
 			path: [
 				{
 					key: "organization_id",
-					require: "true"
+					require: true
 				}
 			]
 		},
@@ -394,20 +375,20 @@ const configList = [
 		FFModelCombine: "Organizations"
 	},
 	{
-		description: "------机构所有客户对我的关注情况-------",
+		description: "------鏈烘瀯鎵€鏈夊鎴峰鎴戠殑鍏虫敞鎯呭喌-------",
 		method: "get",
 		path: "/v1/organizations/{organization_id}/attention_status",
 		parameters: {
 			query: [
 				{
 					key: "timescope",
-					require: "false"
+					require: false
 				}
 			],
 			path: [
 				{
 					key: "organization_id",
-					require: "true"
+					require: true
 				}
 			]
 		},
@@ -418,24 +399,24 @@ const configList = [
 		FFModelCombine: "Organizations"
 	},
 	{
-		description: "------阅读明细-------",
+		description: "------闃呰鏄庣粏-------",
 		method: "get",
 		path: "/v1/organizations/{organization_id}/read_details",
 		parameters: {
 			query: [
 				{
 					key: "sort_by_time",
-					require: "false"
+					require: false
 				},
 				{
 					key: "sort_by_read_times",
-					require: "false"
+					require: false
 				}
 			],
 			path: [
 				{
 					key: "organization_id",
-					require: "true"
+					require: true
 				}
 			]
 		},
@@ -446,14 +427,14 @@ const configList = [
 		FFModelCombine: "Organizations"
 	},
 	{
-		description: "------获取机构和客户的提示-------",
+		description: "------鑾峰彇鏈烘瀯鍜屽鎴风殑鎻愮ず-------",
 		method: "get",
 		path: "/v1/search_tips",
 		parameters: {
 			query: [
 				{
 					key: "keyword",
-					require: "true"
+					require: true
 				}
 			]
 		},
@@ -471,19 +452,15 @@ const configList = [
 			formData: [
 				{
 					key: "article_id",
-					require: "true"
+					require: true
 				},
 				{
 					key: "reader_id",
-					require: "false"
+					require: true
 				},
 				{
 					key: "author_id",
-					require: "true"
-				},
-				{
-					key: "openid",
-					require: "false"
+					require: true
 				}
 			]
 		},
@@ -501,15 +478,11 @@ const configList = [
 			formData: [
 				{
 					key: "article_id",
-					require: "true"
+					require: true
 				},
 				{
 					key: "user_id",
-					require: "false"
-				},
-				{
-					key: "openid",
-					require: "false"
+					require: true
 				}
 			]
 		},

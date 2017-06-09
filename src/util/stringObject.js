@@ -44,6 +44,11 @@ function generateObjBody (object, tabIndex) {
 				str = formatTransfer(str, content, isLast)
 				break;
 			}
+			case 'boolean': {
+				const content = `${indent}${p}: ${member}`
+				str = formatTransfer(str, content, isLast)
+				break;
+			}
 			default: {
 				const content = `${indent}${p}: "${member}"`
 				str = formatTransfer(str, content, isLast)

@@ -15,7 +15,7 @@ export function generateFFModelFolder(configList, outputPath) {
 			FFModelGroup.forEach(data => {
 				const _combinePath = path.join(FFModelPath, `/${data.FFModelCombine}`)
 				mkdirp(_combinePath, function () {
-					const fileStr = getTemplate(generaFFModelFileStr(getTemplateFFModel(data.data)))
+					const fileStr = getTemplate(generaFFModelFileStr(getTemplateFFModel(data.data), data.data))
 					generateFile(fileStr, _combinePath, 'index.js')
 				})
 			})
@@ -41,15 +41,15 @@ function getTemplateFFModel (api) {
 	return _return
 }
 
-function generaFFModelFileStr (list) {
+function generaFFModelFileStr (list, apiList) {
 	const tabIndex = 0
 	const indent = getTabIndent(tabIndex)
   var arrayOutputStr = ''
   list.forEach((data, index) => {
 		if (index === list.length - 1) {
-			arrayOutputStr += `${indent}${stringObject(data, tabIndex)}\n`
+			arrayOutputStr += `${indent}// ${apiList[index].description}\n` + `${indent}${stringObject(data, tabIndex)}\n`
 		} else {
-			arrayOutputStr += `${indent}${stringObject(data, tabIndex)},\n`
+			arrayOutputStr += `${indent}// ${apiList[index].description}\n` + `${indent}${stringObject(data, tabIndex)},\n`
 		}
   })
   return arrayOutputStr

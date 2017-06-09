@@ -6,9 +6,10 @@
 // }
 
 // 使用时将FFModel文件夹名称放入到页面的model下
-// 本文件更新时间：09-06-2017 10:26
+// 本文件更新时间：09-06-2017 13:40
 
 const FFModelCombine = [
+	// ------鑾峰彇瀹㈡埛淇℃伅鍒楄〃-------
 	{
 		key: "GetV1Customers",
 		initialProps: {
@@ -16,7 +17,6 @@ const FFModelCombine = [
 			]
 		},
 		select: function select(res) {
-        console.log(item.name + '\'s response is: ' + res);
         return {
           data: []
         };
@@ -25,6 +25,7 @@ const FFModelCombine = [
         return err;
       }
 	},
+	// ------鑾峰彇鍗曚竴瀹㈡埛淇℃伅-------
 	{
 		key: "GetCustomer",
 		initialProps: {
@@ -32,7 +33,6 @@ const FFModelCombine = [
 			]
 		},
 		select: function select(res) {
-        console.log(item.name + '\'s response is: ' + res);
         return {
           data: []
         };
@@ -41,6 +41,7 @@ const FFModelCombine = [
         return err;
       }
 	},
+	// ------瀵规垜鐨勫叧娉ㄦ儏鍐�-------
 	{
 		key: "GetCustomerAttention",
 		initialProps: {
@@ -48,7 +49,6 @@ const FFModelCombine = [
 			]
 		},
 		select: function select(res) {
-        console.log(item.name + '\'s response is: ' + res);
         return {
           data: []
         };
@@ -57,6 +57,7 @@ const FFModelCombine = [
         return err;
       }
 	},
+	// ------闃呰鏄庣粏-------
 	{
 		key: "GetCustomerRead",
 		initialProps: {
@@ -64,7 +65,6 @@ const FFModelCombine = [
 			]
 		},
 		select: function select(res) {
-        console.log(item.name + '\'s response is: ' + res);
         return {
           data: []
         };

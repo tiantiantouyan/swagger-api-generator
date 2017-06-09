@@ -1,5 +1,7 @@
 const fileHeadInfo = () => {
-	return `/* ┌────────────────────────────────────────────────────────────────────────────┐  */\n` +
+	return
+		`// 本文件是输入json到js的映射配置表，可以添加相关字段，但是不要添加新的api元素，不然不会过滤掉\n` +
+		`/* ┌────────────────────────────────────────────────────────────────────────────┐  */\n` +
 		`/**\n` +
 		 `* 默认字段\n`+
 		 `* @param {description} [string] api的描述\n` +
@@ -18,7 +20,7 @@ const fileHeadInfo = () => {
 		 `* @param {formData} [bool] true时调用api时使用表单提交的方法配置: api.formDataRequest\n` +
 		 `*/\n` +
 		`/*  └────────────────────────────────────────────────────────────────────────────┘ */\n` +
-	  `// 本文件更新时间：${getDate(new Date())}\n`
+	  `// 本文件生成时间：${getDate(new Date())}\n`
 }
 
 export function getConfigListTemplate (str) {

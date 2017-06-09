@@ -6,7 +6,7 @@ const fileHeadInfo = () => {
 	  `//   error: 错误数据筛选函数\n` +
 	  `// }\n\n` +
 	  `// 使用时将FFModel文件夹名称放入到页面的model下\n` +
-	  `// 本文件更新时间：${getDate(new Date())}\n`
+	  `// 本文件生成时间：${getDate(new Date())}\n`
 }
 
 	export function getTemplate (str) {

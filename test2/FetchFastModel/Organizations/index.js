@@ -6,9 +6,10 @@
 // }
 
 // 使用时将FFModel文件夹名称放入到页面的model下
-// 本文件更新时间：09-06-2017 10:26
+// 本文件更新时间：09-06-2017 13:40
 
 const FFModelCombine = [
+	// ------鏈烘瀯涓殑瀹㈡埛淇℃伅-------
 	{
 		key: "GetOrganization",
 		initialProps: {
@@ -16,7 +17,6 @@ const FFModelCombine = [
 			]
 		},
 		select: function select(res) {
-        console.log(item.name + '\'s response is: ' + res);
         return {
           data: []
         };
@@ -25,6 +25,7 @@ const FFModelCombine = [
         return err;
       }
 	},
+	// ------鏈烘瀯鎵€鏈夊鎴峰鎴戠殑鍏虫敞鎯呭喌-------
 	{
 		key: "GetOrganizationAttention",
 		initialProps: {
@@ -32,7 +33,6 @@ const FFModelCombine = [
 			]
 		},
 		select: function select(res) {
-        console.log(item.name + '\'s response is: ' + res);
         return {
           data: []
         };
@@ -41,6 +41,7 @@ const FFModelCombine = [
         return err;
       }
 	},
+	// ------闃呰鏄庣粏-------
 	{
 		key: "GetOrganizationRead",
 		initialProps: {
@@ -48,7 +49,6 @@ const FFModelCombine = [
 			]
 		},
 		select: function select(res) {
-        console.log(item.name + '\'s response is: ' + res);
         return {
           data: []
         };

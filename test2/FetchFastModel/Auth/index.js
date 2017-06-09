@@ -6,9 +6,10 @@
 // }
 
 // 使用时将FFModel文件夹名称放入到页面的model下
-// 本文件更新时间：09-06-2017 10:26
+// 本文件更新时间：09-06-2017 13:40
 
 const FFModelCombine = [
+	// -------send sms code----------
 	{
 		key: "PostV1AuthSmsCode",
 		initialProps: {
@@ -16,15 +17,15 @@ const FFModelCombine = [
 			]
 		},
 		select: function select(res) {
-        console.log(item.name + '\'s response is: ' + res);
-        return {
-          data: []
-        };
-      },
+      return {
+        data: []
+      };
+    },
 		error: function error(err) {
         return err;
       }
 	},
+	// --------login with phone number--------
 	{
 		key: "PostV1AuthLoginPhone",
 		initialProps: {
@@ -32,7 +33,6 @@ const FFModelCombine = [
 			]
 		},
 		select: function select(res) {
-        console.log(item.name + '\'s response is: ' + res);
         return {
           data: []
         };
@@ -41,6 +41,7 @@ const FFModelCombine = [
         return err;
       }
 	},
+	// -------find back password---------
 	{
 		key: "PatchV1AuthResetPassword",
 		initialProps: {
@@ -48,7 +49,6 @@ const FFModelCombine = [
 			]
 		},
 		select: function select(res) {
-        console.log(item.name + '\'s response is: ' + res);
         return {
           data: []
         };
