@@ -105,7 +105,6 @@ function generateOutput (configList, outputPath, outputMode) {
 				generateFFModelFolder(configList, outputPath)
 				generateFile(configListOutput, outputPath, 'api-config-list.js')
 				generateFile(ApiListOutput, outputPath, 'index.js')
-				// generateFFModelFolder(ApiListOutput, outputPath)
 				break;
 			}
 		}

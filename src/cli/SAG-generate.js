@@ -5,7 +5,7 @@ import chalk from 'chalk';
 
 const program = commander;
 let inputPath
-let outputPath
+let outputPath = './SAG'
 let outputMode = 'default'
 
 program
@@ -13,7 +13,10 @@ program
 	.command('<inputp> [outputp]', 'user define')
   .action(function (inputp, outputp) {
 		inputPath = inputp
-		outputPath = outputp
+		if (outputPath && !outputp.args) {
+			outputPath = outputp
+		}
+		console.log(outputp, 'outputpoutputpoutputpoutputp');
 		console.log(chalk.magenta(`inputPath: ${inputPath}\noutputPath: ${outputPath}`));
   })
   .option("-d, --default", "default outputMode")
