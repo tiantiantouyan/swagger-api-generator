@@ -1,0 +1,6 @@
+{
+	"inputMode": "json", // "json", "url"
+	"inputPath": "./swagger.json", // relative path
+	"outputMode": "default", // "default", "apiOnly", "all"
+	"outputPath": "./src/api" // relative path
+}

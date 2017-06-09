@@ -1,0 +1,14 @@
+{
+	"presets": ["es2015", "stage-0"],
+  "ignore": [
+    "src/templates/utils.js",
+    "src/templates/client.js",
+    "src/templates/FFModelObject.js"
+  ],
+  "plugins": [
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }]
+  ]
+}
