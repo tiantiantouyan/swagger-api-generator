@@ -110,7 +110,7 @@ sag g ./swagger.json
 **——添加临时/测试api接口**
 >在`本地SwaggerJson输入源`中暂时添加对应格式的api-json对象
 >
-```json
+```
 "/v1/organizations/{organization_id}/read_details": {
     "get": {
         "description": "------获取机构阅读信息-------",
