@@ -19,7 +19,7 @@ SwaggerJson: 指用户(你)提供的Json输入源，本地的.swagger.json或者
 
 **——swagger-api-config.json**
 
-```json
+```
 {
 	"inputMode": "json", // "json", "url"
 	"inputPath": "./swagger.json", // relative path
@@ -134,10 +134,5 @@ sag g ./swagger.json
 },
 ```
 上述字段都是SAG运行必须依赖的参数，其他参数你看心情
-
-
-
-
-
 
 
