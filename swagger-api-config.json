@@ -1,6 +1,6 @@
 {
-	"inputMode": "url",
-	"inputPath": "http://10.100.242.8:8080/v1/swagger_doc",
-	"outputMode": "all",
-	"outputPath": "./test/api"
+	"inputMode": "json", // "json", "url"
+	"inputPath": "./swagger.json", // relative path
+	"outputMode": "default", // "default", "apiOnly", "all"
+	"outputPath": "./src/api" // relative path
 }

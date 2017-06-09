@@ -10,15 +10,15 @@ let outputMode = 'default'
 
 program
   .version(version())
+	.command('<inputp> [outputp]', 'user define')
+  .action(function (inputp, outputp) {
+		inputPath = inputp
+		outputPath = outputp
+		console.log(chalk.magenta(`inputPath: ${inputPath}\noutputPath: ${outputPath}`));
+  })
   .option("-d, --default", "default outputMode")
   .option("-a, --apiOnly", "only output api function list")
   .option("-A, --all", "output include FetchFastModel")
-	.command('<ip> [op]', 'user define')
-  .action(function (ip, op) {
-		inputPath = ip
-		outputPath = op
-		console.log(chalk.magenta(`inputPath: ${inputPath}\noutputPath: ${outputPath}`));
-  })
 
 program
   .parse(process.argv);
