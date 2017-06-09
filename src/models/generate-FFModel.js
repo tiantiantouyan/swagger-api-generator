@@ -7,7 +7,7 @@ import { stringObject } from '../util/stringObject'
 import { getTabIndent } from '../util/getTabIndent'
 
 export function generateFFModelFolder(configList, outputPath) {
-	const targetPath = path.join(outputPath, '../')
+	const targetPath = path.join(outputPath, './')
 	const FFModelPath = path.join(targetPath, './FetchFastModel')
 	if (!fs.existsSync(FFModelPath)) {
 		mkdirp(FFModelPath, function () {
@@ -30,13 +30,12 @@ function getTemplateFFModel (api) {
       data: []
     },
     select: function (res) {
-      console.log(`${item.name}'s response is: ${res}`)
       return {
         data: []
       }
     },
-    error: function (error) {
-      return error
+    error: function (err) {
+      return err
     }
 	}))
 	return _return

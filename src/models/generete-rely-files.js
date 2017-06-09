@@ -6,7 +6,8 @@ var shell = require('shelljs');
 
 const RELY_FILES = [
 	'utils.js',
-	'client.js'
+	'client.js',
+	'signature.js'
 ]
 
 export function genereteRelyFiles (outputPath) {
